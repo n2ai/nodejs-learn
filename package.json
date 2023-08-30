@@ -1,0 +1,27 @@
+{
+  "name": "full-backend-zero",
+  "version": "1.0.0",
+  "description": "Hai Trinh Fullstack backend zero",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n2ai/nodejs-learn.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "Hai Trinh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n2ai/nodejs-learn/issues"
+  },
+  "homepage": "https://github.com/n2ai/nodejs-learn#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
