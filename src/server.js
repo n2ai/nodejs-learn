@@ -1,9 +1,13 @@
 const express = require('express')
 const app = express()
+const path = require('path')
 const port = 8081
 
+
+console.log(">>> check env: ", process.env)
+
 //config template engine
-app.set('views','./views')
+app.set('views',path.join(__dirname,'views'))
 app.set('view engine','ejs')
 
 app.get('/',(req,res)=>{
@@ -15,7 +19,7 @@ app.get('/abc', (req,res)=>{
 })
 
 app.get('/hoidanit',(req,res)=>{
-    res.send('<h1>Hoi dan it voi eric</h1>')
+    res.render('sample.ejs')
 })
 
 app.listen(port,()=>{
