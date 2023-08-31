@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 const port = 8081
 
+//config template engine
+app.set('views','./views')
+app.set('view engine','ejs')
+
 app.get('/',(req,res)=>{
     res.send('Hello World!')
 })
