@@ -7,22 +7,16 @@ const hostname = process.env.HOST_NAME
 //config import
 const configViewEngine = require('./config/viewEngine')
 
+//define web routes
+const webRoutes= require('./routes/web')
+
 //config template engine
 configViewEngine(app)
 
 
-
-app.get('/',(req,res)=>{
-    res.send('Hello World! with nodemon')
-})
-
-app.get('/abc', (req,res)=>{
-    res.send('Check ABC')
-})
-
-app.get('/hoidanit',(req,res)=>{
-    res.render('sample.ejs')
-})
+//routes
+//first parameter will be the prefix, the rest follow
+app.use('/test', webRoutes)
 
 app.listen(port,()=>{
     console.log(`Example app listening on ${port}`)
