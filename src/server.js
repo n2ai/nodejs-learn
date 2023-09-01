@@ -4,13 +4,13 @@ const path = require('path')
 require('dotenv').config()
 const port = process.env.port || 8888
 const hostname = process.env.HOST_NAME
+//config import
+const configViewEngine = require('./config/viewEngine')
 
 //config template engine
-app.set('views',path.join(__dirname,'views'))
-app.set('view engine','ejs')
+configViewEngine(app)
 
-//config static files
-app.use(express.static(path.join(__dirname,'public')))
+
 
 app.get('/',(req,res)=>{
     res.send('Hello World! with nodemon')
