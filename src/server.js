@@ -16,7 +16,7 @@ configViewEngine(app)
 
 //routes
 //first parameter will be the prefix, the rest follow
-app.use('/test', webRoutes)
+app.use('/', webRoutes)
 
 app.listen(port,()=>{
     console.log(`Example app listening on ${port}`)
