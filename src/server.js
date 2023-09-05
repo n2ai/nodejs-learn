@@ -32,10 +32,10 @@ const connection = mysql.createConnection({
 
 //query
 connection.query(
-    'SELECT * FROM `table` WHERE `name` = "Page" AND `age` > 45',
+    'SELECT * FROM Users ',
     function (err,results,fields){
-        console.log(results);
-        console.log(fields)
+        console.log(">>>results= ",results);
+        console.log(">>>fields= ",fields)
     }
 )
 
