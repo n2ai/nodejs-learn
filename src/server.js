@@ -28,9 +28,8 @@ app.use('/', webRoutes)
 //query
 connection.query(
     'SELECT * FROM Users ',
-    function (err,results,fields){
+    function (err,results){
         console.log(">>>results= ",results);
-        console.log(">>>fields= ",fields)
     }
 )
 
