@@ -4,8 +4,9 @@ const path = require('path')
 require('dotenv').config()
 const port = process.env.port || 8888
 const hostname = process.env.HOST_NAME
-//import mysql
-const mysql = require('mysql2')
+
+//import database connection
+const connection = require('./config/database')
 
 //config import
 const configViewEngine = require('./config/viewEngine')
@@ -22,13 +23,7 @@ configViewEngine(app)
 app.use('/', webRoutes)
 
 //test connection
-const connection = mysql.createConnection({
-    host:'localhost',
-    port: 3307,
-    user:'root',
-    password:'123456',
-    database:'hoidanit'
-})
+
 
 //query
 connection.query(
