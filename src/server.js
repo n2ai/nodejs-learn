@@ -25,13 +25,7 @@ app.use('/', webRoutes)
 //test connection
 
 
-//query
-connection.query(
-    'SELECT * FROM Users ',
-    function (err,results){
-        console.log(">>>results= ",results);
-    }
-)
+
 
 app.listen(port,()=>{
     console.log(`Example app listening on ${port}`)
