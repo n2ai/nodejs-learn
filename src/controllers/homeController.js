@@ -14,7 +14,7 @@ const getHomepage = (req,res)=>{
             res.send(JSON.stringify(users))
         }
     )
-    res.send('Hello World! with nodemon')
+    
 }
 
 const getABC = (req,res)=>{
