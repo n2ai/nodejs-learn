@@ -5,6 +5,10 @@ require('dotenv').config()
 const port = process.env.port || 8888
 const hostname = process.env.HOST_NAME
 
+//config req.body
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
 //import database connection
 const connection = require('./config/database')
 
