@@ -14,8 +14,18 @@ const getHoiDanIT = (req,res)=>{
 }
 
 const postCreateUser = (req,res)=>{
-    console.log(">>> req.body",req.body)
-    res.send('create a new user')
+    
+    let {email, myname,city} = req.body
+
+    connection.query(
+        `INSERT INTO Users (email,name,city) VALUES (?,?,?)`,
+        [email,myname,city],
+        function(err,results){
+            console.log(results)
+
+            res.send('Created user succeed !')
+        }
+    )
 }
 
 module.exports = {getHomepage, getABC,getHoiDanIT, postCreateUser}
