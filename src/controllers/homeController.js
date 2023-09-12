@@ -1,8 +1,12 @@
 const connection = require('../config/database')
 
-const getHomepage = (req,res)=>{
+const getHomepage = async (req,res)=>{
     
-    return res.render('home.ejs')
+    let [results,fields] = await connection.query('select * from Users')
+
+    console.log(">>> check rows: ", results)
+
+    return res.render('home.ejs', {listUsers: results})
 }
 
 const getABC = (req,res)=>{
@@ -20,31 +24,11 @@ const getCreatePage = (req,res)=>{
 const postCreateUser = async (req,res)=>{
     
     let {email, myname,city} = req.body
-
-    // connection.query(
-    //     `INSERT INTO Users (email,name,city) VALUES (?,?,?)`,
-    //     [email,myname,city],
-    //     function(err,results){
-    //         console.log(results)
-
-    //         res.send('Created user succeed !')
-    //     }
-    // )
     
     let [results,fields] = await connection.query(
         `INSERT INTO Users (email,name,city) VALUES (?,?,?)`,
         [email,myname,city]
     )
-
-    // connection.query(
-    //     'select * from Users u',
-    //     function(err,results,fields){
-    //         console.log(">>>results=", results)
-    //     }
-    // )
-
-    // const [results,fields] = await connection.query('select * from Users u',)
-
     console.log(">>>check results: ", results)
 
 }
