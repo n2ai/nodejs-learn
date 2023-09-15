@@ -1,5 +1,5 @@
 const connection = require('../config/database')
-const {getAllUsers} = require('../services/CRUDService')
+const {getAllUsers,updateUserById} = require('../services/CRUDService')
 
 const getHomepage = async (req,res)=>{
     let results = await getAllUsers()
@@ -42,16 +42,20 @@ const postCreateUser = async (req,res)=>{
 
 }
 
-const postUpdateUser = (req,res)=>{
+const postUpdateUser =  async (req,res)=>{
 
     let email = req.body.email
     let name = req.body.myname
     let city = req.body.city
     let userId = req.body.userId
 
+    await updateUserById(email,name,city,userId)
+
     console.log(">>>email = ", email, "name = ", name, "city = ", city, "userId: ", userId)
 
-    res.send('Updated user succeed!')
+
+    //if update success, redirect to homepage
+    res.redirect('/')
 }
 
 module.exports = {getHomepage, getABC,getHoiDanIT, postCreateUser, getCreatePage, getUpdatePage, postUpdateUser}
