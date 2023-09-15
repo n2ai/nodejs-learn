@@ -42,4 +42,16 @@ const postCreateUser = async (req,res)=>{
 
 }
 
-module.exports = {getHomepage, getABC,getHoiDanIT, postCreateUser, getCreatePage, getUpdatePage}
+const postUpdateUser = (req,res)=>{
+
+    let email = req.body.email
+    let name = req.body.myname
+    let city = req.body.city
+    let userId = req.body.userId
+
+    console.log(">>>email = ", email, "name = ", name, "city = ", city, "userId: ", userId)
+
+    res.send('Updated user succeed!')
+}
+
+module.exports = {getHomepage, getABC,getHoiDanIT, postCreateUser, getCreatePage, getUpdatePage, postUpdateUser}

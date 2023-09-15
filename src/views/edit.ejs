@@ -16,21 +16,24 @@
     </div>
 
     <div class="form-add-new">
-        <form action="/create-user" method="POST">
+        <form action="/update-user" method="POST">
             <fieldset>
                 <legend>Update a user</legend>
-            
+            <div class="input-group">
+                <label>Id:</label>
+                <input type="text" name="userId" value="<%= userEdit.id %>">
+            </div>
             <div class="input-group">
                 <label>Email:</label>
-                <input type="text" id="emailID" name="email" value="<%= userEdit.email %>">
+                <input type="text"  name="email" value="<%= userEdit.email %>">
             </div>
             <div class="input-group">
                 <label>Name:</label>
-                <input type="text" id="nameID" name="myname" value="<%= userEdit.name %>">
+                <input type="text" name="myname" value="<%= userEdit.name %>">
             </div>
             <div class="input-group">
                 <label>City:</label>
-                <input type="text" id="cityID" name="city" value="<%= userEdit.city %>">
+                <input type="text" name="city" value="<%= userEdit.city %>">
             </div>
             <div>
                 <button>Save</button>
