@@ -13,6 +13,11 @@ const updateUserById = async (email,name,city,userId) => {
     [email,name,city,userId])
 }
 
+const getUserById = async (id)=>{
+    let [results,fields] = await connection.query('SELECT * FROM Users u WHERE id = ?',[id])
+    return results
+}
+
 module.exports = {
-    getAllUsers, updateUserById
+    getAllUsers, updateUserById, getUserById
 }
