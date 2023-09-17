@@ -18,6 +18,10 @@ const getUserById = async (id)=>{
     return results
 }
 
+const deleteUserById = async (id)=>{
+    await connection.query('DELETE FROM Users WHERE id = ?',[id])
+}
+
 module.exports = {
-    getAllUsers, updateUserById, getUserById
+    getAllUsers, updateUserById, getUserById, deleteUserById
 }
